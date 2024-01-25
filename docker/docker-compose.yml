@@ -303,7 +303,6 @@ services:
       interval: 5s
       retries: 10
     restart: unless-stopped
-    depends_on:
     # Uncomment to use Big Query backend for analytics
     # volumes:
     #   - type: bind
@@ -342,7 +341,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-    depends_on:
     command:
       - postgres
       - -c
