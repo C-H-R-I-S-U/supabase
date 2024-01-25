@@ -304,9 +304,6 @@ services:
       retries: 10
     restart: unless-stopped
     depends_on:
-      db:
-        # Disable this if you are using an external Postgres database
-        condition: service_healthy
     # Uncomment to use Big Query backend for analytics
     # volumes:
     #   - type: bind
@@ -345,6 +342,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+    depends_on:
     command:
       - postgres
       - -c
